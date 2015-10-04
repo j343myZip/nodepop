@@ -1,56 +1,26 @@
 var adverts=[{
-    "name": "Bicicleta",
+    "name": "Bicycle",
     "sale": true,
     "price": 230.15,
-    "foto": "bici.jpg",
-    "tags": [ "lifestyle", "motor"]
+    "photo": "bicycle.jpg",
+    "tags": [ "lifestyle", "vintage","nice"]
 },   {
-    "name": "Bicicleta1",
-    "sale": true,
-    "price": 231.15,
-    "foto": "bici1.jpg",
-    "tags": [ "lifestyle", "motor"]
-},   {
-    "name": "Bicicleta2",
-    "sale": true,
-    "price": 232.15,
-    "foto": "bici2.jpg",
-    "tags": [ "lifestyle", "motor"]
-},   {
-    "name": "Bicicleta3",
+    "name": "Ipad Mini",
     "sale": false,
-    "price": 233.15,
-    "foto": "bici3.jpg",
-    "tags": [ "lifestyle", "motor"]
+    "price": 300.55,
+    "photo": "ipad.jpg",
+    "tags": [ "lifestyle", "Apple","technology","iOS"]
 },   {
-    "name": "Bicicleta4",
+    "name": "Nexus 6",
     "sale": true,
-    "price": 234.15,
-    "foto": "bici4.jpg",
-    "tags": [ "lifestyle", "motor"]
+    "price": 432.15,
+    "photo": "nexus6.jpg",
+    "tags": [ "lifestyle", "Google","Android"]
 },   {
-    "name": "Bicicleta5",
-    "sale": true,
-    "price": 235.15,
-    "foto": "bici5.jpg",
-    "tags": [ "lifestyle", "motor"]
-},   {
-    "name": "Bicicleta6",
-    "sale": true,
-    "price": 236.15,
-    "foto": "bici6.jpg",
-    "tags": [ "lifestyle", "motor"]
-},   {
-    "name": "Bicicleta7",
-    "sale": true,
-    "precio": 237.15,
-    "foto": "bici7.jpg",
-    "tags": [ "lifestyle", "motor"]
-},   {
-    "name": "Bicicleta8",
-    "sale": true,
-    "price": 238.15,
-    "foto": "bici8.jpg",
+    "name": "Scooter",
+    "sale": false,
+    "price": 733.15,
+    "photo": "scooter.jpg",
     "tags": [ "lifestyle", "motor"]
 }];
 module.exports=adverts;

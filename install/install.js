@@ -6,6 +6,8 @@ mongoose.connection.collections['adverts'].drop( function(err) {
     advert.install();
 });
 mongoose.connection.collections['users'].drop( function(err) {
-    user.install();
+    mongoose.connection.collections['pushtokens'].drop( function(err) {
+        user.install();
+    });
 });
 

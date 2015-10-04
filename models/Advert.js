@@ -6,10 +6,10 @@ var mongoose =require("mongoose");
 //define schema of advert
 
 var advertSchema = mongoose.Schema({
-    name: String,
+    name: {type:String, index: true},
     sale:  Boolean,
     price: Number,
-    foto: String,
+    photo: String,
     tags:[String]
 });
 //estatico

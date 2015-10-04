@@ -8,7 +8,7 @@ var mongoose =require("mongoose");
 var pushTokenSchema = mongoose.Schema({
     platform: {type: String, enum: ['ios', 'android']},
     token: String,
-    user: String
+    user: {type:String, index: true}
 });
 //estatico
 pushTokenSchema.statics.save=function(pushToken,errcallback,callback){
@@ -24,6 +24,6 @@ pushTokenSchema.statics.save=function(pushToken,errcallback,callback){
 
 };
 
-var PushToken=mongoose.model('PushToken',userSchema);
+var PushToken=mongoose.model('PushToken',pushTokenSchema);
 
 module.exports = PushToken;

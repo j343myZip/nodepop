@@ -3,12 +3,14 @@
  */
 var db=require("../lib/mongdb.js");
 var mongoose =require("mongoose");
+var PushToken=require("./PushToken.js");
+var sha1=require("../lib/sha1Pass.js");
 //define schema of advert
 
 var userSchema = mongoose.Schema({
     name: String,
-    email: String,
-    password: String
+    email: {type:String, index: true},
+    password: {type:String, index: true}
 });
 //estatico
 userSchema.statics.install=function(){
@@ -16,7 +18,11 @@ userSchema.statics.install=function(){
     users.forEach(function(elem){
         console.log("*");
         usersU=new User(elem);
-        usersU.save();
+        usersU.save(function(err,creado){
+            console.log(creado._id);
+            var push=new PushToken({user:creado._id});
+            push.save();
+        });
     });
 };
 userSchema.statics.save=function(user,errcallback,callback){
@@ -26,6 +32,9 @@ userSchema.statics.save=function(user,errcallback,callback){
         if(err){
             return errcallback(err,null);
         }
+
+        var push=new PushToken({user:creado._id});
+        user.save();
         return callback(null,creado);
 
     });

@@ -66,4 +66,25 @@ router.get("/tags",function(reg,res,next){
 
     });
 });
+router.get('/photo/:picture', function(req, res, next){
+    var picture = req.params.picture;
+    var ruta;
+    if (picture.indexOf(".")>0){
+        ruta = req.dir + '/public/images/' + picture;
+    }else{
+        ruta = req.dir + '/public/images/' + picture + ".jpg";
+    }
+
+    res.sendFile(ruta, function (err, data) {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ok: false, error : err});
+            return;
+
+        } else {
+            return;
+        }
+    });
+
+});
 module.exports=router;
