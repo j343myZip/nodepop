@@ -52,7 +52,7 @@ Run server in dev mode
  
  #### Translated messages in the response
  
-Modify /lib/lang.js and add your own translaction
+Modify /lib/lang.js and add your own translation
  
  #### Api responses
 
