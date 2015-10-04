@@ -95,10 +95,10 @@ Modify /lib/lang.js and add your own translaction
 		Url: /apiv1/users/register
 
 
- 	+ **/login [POST]**
+ 	+ **/authenticate [POST]**
  	 	- **email** Should be a unique valid email address. It will be used to login later.
  	 	- **password** A string of password to login later. It will be saved encrypted.
-		- **pushtoken It is optional
+		- **pushtoken** It is optional
 
 		Method: POST
 		Url: /apiv1/users/authenticate?lang=en
@@ -143,7 +143,7 @@ Modify /lib/lang.js and add your own translaction
 
 
  	 	- **token**
- 	
+
 
 		Method: GET
-		Url: /apiv1/adverts/photo/:namePhoto
+		Url: /apiv1/adverts/tags
