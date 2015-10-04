@@ -55,8 +55,7 @@ Run server in dev mode
 Modify /lib/lang.js and add your own translaction
  
  #### Api responses
- All success and error messages has the same data in the json returned object. Which is:
- 
+
  ```Javascript Correct response
  {
  		ok: true,
