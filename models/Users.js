@@ -11,22 +11,26 @@ var userSchema = mongoose.Schema({
     password: String
 });
 //estatico
-userSchema.statics.save=function(){
+userSchema.statics.install=function(){
     users=require("../ext/Users.js");
     users.forEach(function(elem){
         console.log("*");
         usersU=new User(elem);
         usersU.save();
     });
+};
+userSchema.statics.save=function(user,errcallback,callback){
 
+    var user = new User(user);
+    user.save(function(err,creado){
+        if(err){
+            return errcallback(err,null);
+        }
+        return callback(null,creado);
 
+    });
 
 };
-//instancia
-
-
-//Exportar
-
 var User=mongoose.model('User',userSchema);
 
 module.exports = User;

@@ -3,9 +3,9 @@ var user=require("../models/Users.js");
 var mongoose =require("mongoose");
 
 mongoose.connection.collections['adverts'].drop( function(err) {
-    advert.save();
+    advert.install();
 });
 mongoose.connection.collections['users'].drop( function(err) {
-    user.save();
+    user.install();
 });
 

@@ -13,7 +13,7 @@ var advertSchema = mongoose.Schema({
     tags:[String]
 });
 //estatico
-advertSchema.statics.save=function(){
+advertSchema.statics.install=function(){
    adverts=require("../ext/Adverts.js");
         adverts.forEach(function(elem){
             console.log("*");
@@ -23,6 +23,18 @@ advertSchema.statics.save=function(){
 
 
 
+};
+advertSchema.statics.lista=function(criterios,sort,start,limit,callback){
+    var query=Advert.find(criterios);
+    query.skip(start);
+    query.limit(limit);
+    query.sort(sort);
+
+    query.exec(function(err,rows){
+        if(err)
+            return callback(err);
+        return callback(null,rows);
+    });
 };
 //instancia
 
